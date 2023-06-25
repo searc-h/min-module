@@ -1,6 +1,6 @@
 {
   "name": "@min-module/middleware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "m-module的插件",
   "private": true,
   "main": "./lib",
@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@min-module/core": "^1.0.1",
+    "@min-module/core": "^1.0.2",
     "react-router-dom": "^6.14.0"
   }
 }
