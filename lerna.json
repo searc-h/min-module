@@ -1,10 +1,12 @@
 {
-    "packages": ["packages/*"],
-    "npmClient": "yarn",
-    "command": {
-      "bootstrap": {
-        "hoist": true
-      }
-    },
-    "version": "0.0.1"
-  }
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  },
+  "version": "1.0.0"
+}

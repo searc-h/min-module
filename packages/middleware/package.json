@@ -1,17 +1,17 @@
 {
-    "name": "@min-module/middleware",
-    "version": "1.0.0",
-    "description": "m-module的插件",
-    "private":"true",
-    "main": "./lib",
-    "files": [
-      "types",
-      "lib"
-    ],
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
-  }
+  "name": "@min-module/middleware",
+  "version": "1.0.0",
+  "description": "m-module的插件",
+  "private": "true",
+  "main": "./lib",
+  "files": [
+    "types",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
