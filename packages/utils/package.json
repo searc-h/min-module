@@ -1,5 +1,8 @@
 {
   "name": "@min-module/utils",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.2",
   "description": "m-module的工具类",
   "main": "./lib",
@@ -14,5 +17,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "gitHead": "bd76c1b37bf4568031f4391279a5dec6471a7f1c"
+  "gitHead": "859b4e48201bfebe12112f097ee8f476735a40df"
 }

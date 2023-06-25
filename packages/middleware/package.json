@@ -1,5 +1,8 @@
 {
   "name": "@min-module/middleware",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.2",
   "description": "m-module的插件",
   "private": true,
