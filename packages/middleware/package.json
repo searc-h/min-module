@@ -1,17 +1,22 @@
 {
   "name": "@min-module/middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "m-module的插件",
-  "private": "true",
+  "private": true,
   "main": "./lib",
   "files": [
     "types",
     "lib"
   ],
+  "types": "types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@min-module/core": "^1.0.1",
+    "react-router-dom": "^6.14.0"
+  }
 }

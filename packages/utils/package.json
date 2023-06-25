@@ -1,16 +1,18 @@
 {
   "name": "@min-module/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "m-module的工具类",
   "main": "./lib",
   "files": [
     "types",
     "lib"
   ],
+  "types": "types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "bd76c1b37bf4568031f4391279a5dec6471a7f1c"
 }
