@@ -1,0 +1,16 @@
+{
+    "name": "@min-module/core",
+    "version": "1.0.0",
+    "description": "m-module核心逻辑",
+    "main": "./lib",
+    "files": [
+      "types",
+      "lib"
+    ],
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

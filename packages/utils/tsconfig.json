@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "declarationDir": "./types",
+      "target": "ES6",
+      "jsx": "react-jsx",
+      "esModuleInterop": true,
+      "strict": true,
+      "moduleResolution": "nodenext",
+      "module": "nodenext"
+    }
+  }
