@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "m-module核心逻辑",
   "main": "./lib",
   "files": [
