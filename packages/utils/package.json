@@ -1,4 +1,5 @@
 {
+  
   "name": "@min-module/utils",
   "publishConfig": {
     "access": "public"

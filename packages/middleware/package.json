@@ -5,7 +5,6 @@
   },
   "version": "1.0.4",
   "description": "m-module的插件",
-  "private": true,
   "main": "./lib",
   "files": [
     "types",

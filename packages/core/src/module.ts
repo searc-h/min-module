@@ -1,4 +1,4 @@
-import { Module } from '../interface';
+import { Module } from './interface';
 
 export const traverseModule = (module: Module) => {
   const modules: Module[] = [module];

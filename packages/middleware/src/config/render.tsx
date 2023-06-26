@@ -1,4 +1,4 @@
-import { Middleware,Module } from '@m-module/core';
+import { Middleware,Module } from '@min-module/core';
 
 import { ConfigContext, ConfigProvider } from './context';
 

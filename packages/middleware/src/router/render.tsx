@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Middleware, Module } from '@min-module/core/types/interface';
+import { Middleware, Module } from '@min-module/core';
 
 export const renderRouter: Middleware = (module:Module, children:JSX.Element) => {
   //

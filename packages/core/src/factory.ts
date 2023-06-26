@@ -1,4 +1,4 @@
-import { FactoryOptions, Middleware, Module } from '../interface';
+import { FactoryOptions, Middleware, Module } from './interface';
 import { compose } from './utils';
 import { traverseModule, forRoot } from './module';
 

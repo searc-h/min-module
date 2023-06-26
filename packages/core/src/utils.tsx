@@ -1,4 +1,4 @@
-import { Middleware, Module } from '../interface';
+import { Middleware, Module } from './interface';
 
 export const compose = (middlewares: Middleware[], args: Module) => {
   return middlewares.reduceRight(
