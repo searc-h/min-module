@@ -1,10 +1,9 @@
 {
-  
   "name": "@min-module/utils",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "m-module的工具类",
   "main": "./lib",
   "files": [
