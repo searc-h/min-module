@@ -19,7 +19,7 @@ export class Subscription<T extends Record<string, unknown>> {
     this.initEvents(newState)
   };
 
-  public getState = <K extends keyof T>(propKey: K) => this.state[propKey];
+  public getState = () => this.state;
 
   public listen = (
     handler: (value: T) => void
