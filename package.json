@@ -2,8 +2,7 @@
   "name": "monorepo",
   "version": "1.0.1",
   "description": "module",
-  "private":true,
-  
+  "private": false,
   "workspaces": [
     "packages/*"
   ],

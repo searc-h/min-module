@@ -1,3 +1,3 @@
-export * from './context';
-export * from './rener';
-export { useModuleData } from './lifecycle';
+export * from "./context";
+export * from "./render";
+export { useModuleData } from "./lifecycle";

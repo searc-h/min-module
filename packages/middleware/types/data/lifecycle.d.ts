@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
-import { Module } from '@min-module/core';
+import React, { PropsWithChildren } from "react";
+import { Module } from "@min-module/core";
 interface PropsType {
     module: Module;
     modules?: Module[];

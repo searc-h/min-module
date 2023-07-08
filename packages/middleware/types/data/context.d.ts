@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Module } from '@min-module/core';
+import { FC } from "react";
+import { Module } from "@min-module/core";
 type ModuleType = Map<Module, {
     module?: Module;
     options?: Record<string, unknown>;

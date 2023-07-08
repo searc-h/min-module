@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-export type LocaleType = 'zh' | 'en';
+import React, { FC } from "react";
+export type LocaleType = "zh" | "en";
 interface DataType {
     locale: LocaleType;
 }
