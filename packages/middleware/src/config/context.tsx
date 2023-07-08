@@ -1,7 +1,13 @@
-import React ,{ createContext, FC, ReactNode, useMemo, useReducer, useState } from 'react';
+import React, {
+  createContext,
+  FC,
+  ReactNode,
+  useMemo,
+  useReducer,
+  useState,
+} from "react";
 
-
-export type LocaleType = 'zh' | 'en';
+export type LocaleType = "zh" | "en";
 
 interface DataType {
   locale: LocaleType;
@@ -19,11 +25,11 @@ interface ContextProps {
 const ConfigContext = createContext({} as ContextProps);
 
 interface ProviderProps {
-    children : JSX.Element
+  children: JSX.Element;
 }
 const ConfigProvider: FC<ProviderProps> = props => {
   const { children } = props;
-  const [localeDefault] = useState<LocaleType>('zh');
+  const [localeDefault] = useState<LocaleType>("zh");
 
   const reducer = (state: DataType, action: Partial<DataType>) => {
     return {

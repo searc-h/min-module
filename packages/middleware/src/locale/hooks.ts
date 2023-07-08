@@ -1,4 +1,4 @@
-import { useIntl as useIntlOrigin } from 'react-intl';
+import { useIntl as useIntlOrigin } from "react-intl";
 
 export const useIntl = <T extends string>() => {
   const { formatMessage } = useIntlOrigin();

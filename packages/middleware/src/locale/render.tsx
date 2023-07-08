@@ -1,5 +1,5 @@
-import { Middleware, Module, traverseModule } from '@min-module/core';
-import { LocaleProvider } from './provider';
+import { Middleware, Module, traverseModule } from "@min-module/core";
+import { LocaleProvider } from "./provider";
 
 export const renderLocale: Middleware = (
   module: Module,
@@ -12,9 +12,9 @@ export const renderLocale: Middleware = (
 
 const generateLocales = (module: Module) => {
   return traverseModule(module).reduce(
-    (prev:any, next:any) => {
-      prev.zh = Object.assign(formatLocales(next?.locale || [], 'zh'), prev.zh);
-      prev.en = Object.assign(formatLocales(next?.locale || [], 'en'), prev.en);
+    (prev: any, next: any) => {
+      prev.zh = Object.assign(formatLocales(next?.locale || [], "zh"), prev.zh);
+      prev.en = Object.assign(formatLocales(next?.locale || [], "en"), prev.en);
       return prev;
     },
     { zh: {}, en: {} }

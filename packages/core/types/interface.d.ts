@@ -13,7 +13,9 @@ export interface PropsType {
     modules: Module[];
 }
 export type Middleware = (module: Module, app: JSX.Element) => JSX.Element;
-export type FactoryOptions = Middleware[];
+export type FactoryOptions = {
+    middleware: Middleware[];
+};
 export interface Module<T = Record<string, unknown>> {
     _system?: SystemOptions;
     imports?: Module[];

@@ -1,2 +1,2 @@
-export * from './storeClass'
-export * from './useGlobalStore'
+export * from "./storeClass";
+export * from "./useGlobalStore";

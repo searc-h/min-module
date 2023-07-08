@@ -1,4 +1,4 @@
-import { Module } from './interface';
+import { Module } from "./interface";
 
 export const traverseModule = (module: Module) => {
   const modules: Module[] = [module];
@@ -6,7 +6,7 @@ export const traverseModule = (module: Module) => {
 
   while (modules.length) {
     const node = modules[0];
-    const subModules = Reflect.get(node, 'imports') || [];
+    const subModules = Reflect.get(node, "imports") || [];
 
     modules.push(...subModules);
     result.push(node);

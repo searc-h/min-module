@@ -1,2 +1,2 @@
-export * from './useGlobalStore'
-export * from './useProxyStore'
+export * from "./useGlobalStore";
+export * from "./useProxyStore";

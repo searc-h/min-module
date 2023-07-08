@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
-import { SubscriptionProxy } from './storeClass';
+import { SubscriptionProxy } from "./storeClass";
 
 export const useProxyStore = <
   T extends Record<string, unknown>,

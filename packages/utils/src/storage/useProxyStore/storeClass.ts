@@ -1,4 +1,4 @@
-import { ProxyEvent } from '../interface';
+import { ProxyEvent } from "../interface";
 
 export class SubscriptionProxy<T extends Record<string, unknown>> {
   private state: T;

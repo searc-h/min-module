@@ -1,19 +1,17 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import { Middleware, Module } from '@min-module/core';
+import { Middleware, Module } from "@min-module/core";
 
-export const renderRouter: Middleware = (module:Module, children:JSX.Element) => {
-  //
+export const renderRouter: Middleware = (
+  module: Module,
+  children: JSX.Element
+) => {
+  console.log("router middleware ready");
   const render = createRender(module);
-
-  return (
-    <BrowserRouter basename={process.env.namespace || undefined}>
-      {render?.render || children}
-    </BrowserRouter>
-  );
+  console.log(render);
+  return <BrowserRouter>{render?.render || children}</BrowserRouter>;
 };
-
 
 const createRender = (module: Module) => {
   const moduleRender = module.render;
@@ -21,7 +19,7 @@ const createRender = (module: Module) => {
   if (!moduleRender) return module;
 
   // 有render的模块，获取其imports中的所有模块
-  const modules: Module[] = Reflect.get(module, 'imports') || [];
+  const modules: Module[] = Reflect.get(module, "imports") || [];
 
   const routes = modules
     // imports中的所有模块【递归】进行路由信息注入，递归结束代表子模块已经注入完毕
