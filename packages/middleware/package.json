@@ -14,8 +14,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/searc-h/min-module"
+  },
+  "keywords": [
+    "middleware",
+    "react",
+    "core",
+    "router",
+    "locale"
+  ],
+  "author": "searc-h",
   "license": "ISC",
   "dependencies": {
     "@min-module/core": "^1.1.4",

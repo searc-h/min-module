@@ -14,6 +14,11 @@
   },
   "keywords": [],
   "author": "ddhh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/searc-h/min-module"
+  },
+  "homepage": "https://www.npmjs.com/package/@min-module/core",
   "license": "ISC",
   "dependencies": {
     "antd": "^5.6.1",
