@@ -31,26 +31,17 @@ const AppModule: Module = {
 
 interface PropsType {
   modules?: Module[];
+  defaultRoutes?: JSX.Element;
 }
 const RootRender: React.FC<PropsType> = props => {
-  const { modules = [] } = props;
+  const { modules = [], defaultRoutes } = props;
   // 使用useIntl来使用国际化能力
   const { getLang } = useIntl<keyof typeof zh>();
 
   return (
     <>
       <div>Hello! , {getLang("min-module")}</div>
-      <Routes>
-        {modules?.map(item => {
-          return (
-            <Route
-              key={item.options?.namespace}
-              element={item.render}
-              path={item.options?.namespace + "*"}
-            />
-          );
-        })}
-      </Routes>
+      {defaultRoutes}
       <Link to={"app"}>展示子模块</Link>
     </>
   );

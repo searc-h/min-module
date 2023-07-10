@@ -1,15 +1,19 @@
 import React from "react";
-export interface SystemOptions {
+export interface SystemOptions<T> {
     forRoot?: boolean;
-    module?: Module;
+    module?: Module<T>;
 }
+/**
+ * @descripiton Module.option类型
+ */
 export interface ModuleOptions {
     /**
      * @desc 当前模块的路由路径
      */
-    namespace?: string;
+    routePath?: string;
     title?: string;
-    data?: any;
+    defaultRoute?: JSX.Element;
+    defaultRoutes?: JSX.Element;
 }
 export interface PropsType {
     [k: string]: unknown;
@@ -20,7 +24,7 @@ export type FactoryOptions = {
     middleware: Middleware[];
 };
 export interface Module<T = Record<string, unknown>> {
-    _system?: SystemOptions;
+    _system?: SystemOptions<T>;
     /**
      * @description 引入别的模块
      */

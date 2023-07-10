@@ -16,7 +16,7 @@ export const traverseModule = (module: Module) => {
   return result;
 };
 
-export const forRoot = <T>(module: Module, data: T) => {
+export const forRoot = <T>(module: Module<T>, data: T) => {
   const current = { ...module };
   current.options = { ...module?.options, ...data };
 
@@ -26,5 +26,5 @@ export const forRoot = <T>(module: Module, data: T) => {
   current._system.forRoot = true;
   current._system.module = module;
 
-  return current as Module;
+  return current as Module<T>;
 };
