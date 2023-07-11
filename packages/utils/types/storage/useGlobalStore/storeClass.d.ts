@@ -1,4 +1,4 @@
-export declare class Subscription<T extends Record<string, unknown>> {
+export declare class Subscription<T> {
     private state;
     private events;
     constructor(state: T);
