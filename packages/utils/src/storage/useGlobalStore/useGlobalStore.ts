@@ -1,32 +1,41 @@
-import { useEffect, useState } from "react"
-import { Subscription } from "./index"
-window.store = new Map()
+import { useEffect, useState } from "react";
+import { Subscription } from "./index";
 
-const getStore =<T extends Record<string , unknown>>( initState:T  , namespace? : string) : Subscription<T>=>{
-    if(!namespace){
-        return new Subscription<T>(initState)
-    }
-    const keys = Array.from(window.store.keys())
-    if(keys.includes(namespace)){
-        return window.store.get(namespace)
-    }else{
-        const newStore = new Subscription<T>(initState)
-        window.store.set(namespace , newStore)
-        return newStore
-    }
-}
+const store: Record<symbol, Subscription<any>> = {};
 
-export const useGlobalStore =<T extends Record<string , unknown>>(props: {namespace?:string , initState?:T})=>{
-    const {namespace  , initState} = props
-    const store = getStore<T>(initState as T,namespace)
-    const [storeState , setStoreState] = useState(store.getState())
-    useEffect(()=>{
-        store.listen(setStoreState)
+window.store = store;
 
-        return ()=>{
-            store.unlisten(setStoreState)
-        }
-    },[])
+const getStore = <T extends Record<string, unknown>>(
+  initState: T,
+  namespace?: string
+): Subscription<T> => {
+  if (!namespace) {
+    return new Subscription<T>(initState);
+  }
+  if (store[Symbol.for(namespace)]) {
+    return store[Symbol.for(namespace)];
+  } else {
+    const newStore = new Subscription<T>(initState);
+    const symbolKey = Symbol.for(namespace);
+    store[symbolKey] = newStore;
+    return newStore;
+  }
+};
 
-    return [storeState , store.setState] as [T , (value  : T)=>void]
-}
+export const useGlobalStore = <T extends Record<string, unknown>>(props: {
+  namespace?: string;
+  initState?: T;
+}) => {
+  const { namespace, initState } = props;
+  const store = getStore<T>(initState as T, namespace);
+  const [storeState, setStoreState] = useState(store.getState());
+  useEffect(() => {
+    store.listen(setStoreState);
+
+    return () => {
+      store.unlisten(setStoreState);
+    };
+  }, []);
+
+  return [storeState, store.setState] as [T, (value: T) => void];
+};

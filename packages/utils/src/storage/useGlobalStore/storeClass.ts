@@ -1,6 +1,6 @@
 import { SubscriptionEvent } from "../interface";
 
-export class Subscription<T extends Record<string, unknown>> {
+export class Subscription<T> {
   private state: T;
   private events: SubscriptionEvent<T>[] = [];
 

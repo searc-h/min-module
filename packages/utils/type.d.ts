@@ -1,4 +1,3 @@
-
-interface Window {
-    store : Map<string , any>
+declare interface Window {
+  store: any;
 }
