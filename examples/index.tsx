@@ -9,7 +9,7 @@ import {
   ConfigContext,
 } from "@min-module/middleware";
 import { useProxyStore, SubscriptionProxy } from "@min-module/utils";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 
 // 使用utils中定义的状态管理：订阅类
 export const proxy1 = new SubscriptionProxy({
@@ -25,23 +25,42 @@ export const AppRender = () => {
 // 定义一个模块（暂时理解为子模块）
 const AppModule: Module = {
   // namespace 值将作为本模块对应的路由路径（可以理解为Link的to值，不用带'/'）
-  options: { namespace: "app" },
+  options: { routePath: "app" },
   render: <AppRender />,
 };
 
 interface PropsType {
   modules?: Module[];
+  /**
+   * @description 当路由没有命中时的默认路由
+   */
+  defaultRoute?: JSX.Element;
+  /**
+   * @description renderRouter根据模块的import自动生成的Routes
+   */
   defaultRoutes?: JSX.Element;
 }
 const RootRender: React.FC<PropsType> = props => {
-  const { modules = [], defaultRoutes } = props;
+  const { modules = [], defaultRoutes, defaultRoute } = props;
   // 使用useIntl来使用国际化能力
   const { getLang } = useIntl<keyof typeof zh>();
 
   return (
     <>
       <div>Hello! , {getLang("min-module")}</div>
-      {defaultRoutes}
+      <Routes>
+        {modules?.map(item => {
+          return (
+            <Route
+              key={item.options?.routePath}
+              element={item.render}
+              path={item.options?.routePath + "/"}
+            />
+          );
+        })}
+        {defaultRoute}
+      </Routes>
+      {/* 上面的内容相当于 {defaultRoutes} */}
       <Link to={"app"}>展示子模块</Link>
     </>
   );
@@ -52,7 +71,10 @@ export const zh = {
 };
 // 定义root模块
 const rootModule: Module = {
-  options: { namespace: "" },
+  options: {
+    routePath: "",
+    defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
+  },
   // 引入其他模块作为子模块（路由拼接）
   imports: [AppModule],
   locale: [
