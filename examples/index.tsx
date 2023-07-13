@@ -7,7 +7,7 @@ import {
   renderLocale,
   useIntl,
   ConfigContext,
-} from "@min-module/middleware";
+} from "@min-module/plugins";
 import { useProxyStore, SubscriptionProxy } from "@min-module/utils";
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 
@@ -73,7 +73,7 @@ export const zh = {
 const rootModule: Module = {
   options: {
     routePath: "",
-    defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
+    // defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
   },
   // 引入其他模块作为子模块（路由拼接）
   imports: [AppModule],

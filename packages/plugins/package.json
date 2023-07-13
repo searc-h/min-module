@@ -1,5 +1,5 @@
 {
-  "name": "@min-module/middleware",
+  "name": "@min-module/plugins",
   "publishConfig": {
     "access": "public"
   },

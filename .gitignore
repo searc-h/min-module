@@ -1,2 +1,11 @@
 node_modules
 
+packages/core/lib
+packages/core/types
+
+packages/plugins/lib
+packages/plugins/types
+
+packages/utils/lib
+packages/utils/types
+

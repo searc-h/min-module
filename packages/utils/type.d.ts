@@ -1,3 +1,3 @@
 declare interface Window {
-  store: any;
+  [k: symbol]: any;
 }
