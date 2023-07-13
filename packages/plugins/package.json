@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "m-module的插件",
   "main": "./lib",
   "files": [
