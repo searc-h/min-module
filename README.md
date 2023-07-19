@@ -45,26 +45,39 @@ const AppModule: Module = {
 
 interface PropsType {
   modules?: Module[];
+  /**
+   * @description 当路由没有命中时的默认路由
+   */
+  defaultRoute?: JSX.Element;
+  /**
+   * @description renderRouter根据模块的import自动生成的Routes
+   */
+  defaultRoutes?: JSX.Element;
 }
 const RootRender: React.FC<PropsType> = props => {
-  const { modules = [] } = props;
+  const { modules = [], defaultRoutes, defaultRoute } = props;
   // 使用useIntl来使用国际化能力
   const { getLang } = useIntl<keyof typeof zh>();
 
   return (
     <>
       <div>Hello! , {getLang("min-module")}</div>
-      <Routes>
+
+      {defaultRoutes}
+
+      {/* <Routes>
         {modules?.map(item => {
           return (
             <Route
-              key={item.options?.namespace}
+              key={item.options?.routePath}
               element={item.render}
-              path={item.options?.namespace + "*"}
+              path={item.options?.routePath + "/"}
             />
           );
         })}
-      </Routes>
+        {defaultRoute}
+      </Routes> */}
+      {/* 上面的路由配置相当于 {defaultRoutes} */}
       <Link to={"app"}>展示子模块</Link>
     </>
   );
@@ -75,7 +88,10 @@ export const zh = {
 };
 // 定义root模块
 const rootModule: Module = {
-  options: { namespace: "" },
+  options: {
+    routePath: "",
+    // defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
+  },
   // 引入其他模块作为子模块（路由拼接）
   imports: [AppModule],
   locale: [
@@ -97,6 +113,7 @@ const Root = createFactory(rootModule, {
 const root = createRoot(document.getElementById("root") as HTMLElement);
 // 渲染你的 React 组件
 root.render(Root);
+
 
 ```
 
