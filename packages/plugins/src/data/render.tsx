@@ -1,7 +1,7 @@
-import { Middleware, Module, traverseModule } from '@min-module/core';
+import { Middleware, Module, traverseModule } from "@min-module/core";
 
-import { DataContext, DataProvider } from './context';
-import { Lifecycle } from './lifecycle';
+import { DataContext, DataProvider, ModuleType } from "./context";
+import { Lifecycle } from "./lifecycle";
 
 export const renderData: Middleware = (module, children) => {
   const moduleData = generateConfig(module);
@@ -10,7 +10,7 @@ export const renderData: Middleware = (module, children) => {
 };
 
 const generateConfig = (module: Module) => {
-  const config = new Map();
+  const config: ModuleType = new Map();
 
   traverseModule(module).forEach(item => {
     const current = item._system?.module || item;
@@ -27,7 +27,6 @@ const generateConfig = (module: Module) => {
 
     config.set(current, {
       options: current.options,
-      module: item,
     });
   });
 

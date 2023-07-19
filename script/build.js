@@ -12,7 +12,7 @@ const mapPackages = (
 ) => {
   const packages = fs.readdirSync(path.resolve(__dirname, packagesPath));
 
-  packages.forEach((item) => {
+  packages.forEach(item => {
     let packagePath = path.resolve(__dirname, packagesPath, item);
 
     try {
@@ -32,9 +32,9 @@ const mapPackages = (
 };
 
 function build(configs) {
-  console.log(configs)
+  console.log(configs);
   // 遍历执行配置项
-  configs.forEach((config) => {
+  configs.forEach(config => {
     webpack(webpackConfig(config), (err, stats) => {
       if (err) {
         console.error(err);
@@ -43,8 +43,8 @@ function build(configs) {
 
       console.log(
         stats.toString({
-          chunks: false, // 使构建过程更静默无输出
-          colors: true, // 在控制台展示颜色
+          chunks: false,
+          colors: true,
         })
       );
       if (stats.hasErrors()) {
@@ -61,9 +61,7 @@ console.log("\n===> running build");
 
 const configs = Object.values(mapPackages());
 const buildConfig = args.length
-  ? configs.filter((item) =>
-      args.some((ele) => new RegExp(ele).test(item.name))
-    )
+  ? configs.filter(item => args.some(ele => new RegExp(ele).test(item.name)))
   : configs;
-console.log('BUILD ...')
+console.log("BUILD ...");
 build(buildConfig);

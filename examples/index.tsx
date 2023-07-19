@@ -48,7 +48,10 @@ const RootRender: React.FC<PropsType> = props => {
   return (
     <>
       <div>Hello! , {getLang("min-module")}</div>
-      <Routes>
+
+      {defaultRoutes}
+
+      {/* <Routes>
         {modules?.map(item => {
           return (
             <Route
@@ -59,8 +62,8 @@ const RootRender: React.FC<PropsType> = props => {
           );
         })}
         {defaultRoute}
-      </Routes>
-      {/* 上面的内容相当于 {defaultRoutes} */}
+      </Routes> */}
+      {/* 上面的路由配置相当于 {defaultRoutes} */}
       <Link to={"app"}>展示子模块</Link>
     </>
   );

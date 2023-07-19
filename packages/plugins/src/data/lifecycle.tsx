@@ -7,7 +7,7 @@ import React, {
 
 import { Module } from "@min-module/core";
 
-import { DataContext } from "./context";
+import { DataContext, ModuleType } from "./context";
 
 interface PropsType {
   module: Module;
@@ -19,11 +19,10 @@ export const Lifecycle: React.FC<PropsWithChildren<PropsType>> = props => {
   const { modules } = useContext(DataContext);
 
   const contextValue = useMemo(() => {
-    const newModules = new Map(modules);
+    const newModules: ModuleType = new Map(modules);
 
     const moduleData = {
       options: module.options,
-      module,
     };
 
     const current = module?._system?.module || module;
@@ -52,5 +51,5 @@ export const useModuleData = <T extends Record<string, unknown>>(
 
   const moduleData = modules?.get(module);
 
-  return [moduleData?.options, moduleData?.module] as [T, Module];
+  return [moduleData?.options] as [T];
 };

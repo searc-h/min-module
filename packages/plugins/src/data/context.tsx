@@ -2,10 +2,9 @@ import { createContext, FC, useMemo } from "react";
 
 import { Module } from "@min-module/core";
 
-type ModuleType = Map<
+export type ModuleType = Map<
   Module,
   {
-    module?: Module;
     options?: Record<string, unknown>;
   }
 >;
