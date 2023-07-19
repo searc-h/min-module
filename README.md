@@ -93,7 +93,12 @@ const rootModule: Module = {
     // defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
   },
   // 引入其他模块作为子模块（路由拼接）
-  imports: [AppModule],
+  imports: [
+    forRoot(AppModule, {
+      // routePath: "",  // 配置路径
+      // defaultRoute: <Route path="*" element={<Navigate to={"new"} />} />, // 配置子模块默认路由
+    }),
+  ],
   locale: [
     {
       type: "zh",

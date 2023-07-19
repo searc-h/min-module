@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { Module, createFactory } from "@min-module/core";
+import { Module, createFactory, forRoot } from "@min-module/core";
 import {
   renderRouter,
   renderConfig,
@@ -76,10 +76,15 @@ export const zh = {
 const rootModule: Module = {
   options: {
     routePath: "",
-    // defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置默认路由
+    // defaultRoute: <Route path="*" element={<Navigate to={"app"} />} />, // 配置本模块默认路由
   },
   // 引入其他模块作为子模块（路由拼接）
-  imports: [AppModule],
+  imports: [
+    forRoot(AppModule, {
+      // routePath: "",  // 配置路径
+      // defaultRoute: <Route path="*" element={<Navigate to={"new"} />} />, // 配置子模块默认路由
+    }),
+  ],
   locale: [
     {
       type: "zh",
