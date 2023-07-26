@@ -1,0 +1,28 @@
+import { Module } from '@min-module/core';
+import App from './content';
+<% if (data.isLocale) { -%>
+import { en, zh } from './locale';
+<% } -%>
+<% if (data.isService) { -%>
+import { Service } from './service';
+<% } -%>
+<% if (data.isLocale) { -%>
+export type LocaleKeys = keyof typeof zh;
+<% } -%>
+
+export const <%= data.name %>Module: Module = {
+  options: { namespace:  '<%= data.namespace%>' },
+  <% if (data.isLocale) { -%>
+    locale: [
+        { type: 'zh', content: zh },
+        { type: 'en', content: en },
+      ],
+  <% } -%>
+  render: <App />
+};
+<% if (data.isService) { -%>
+export const useService = () => {
+    const service = new Service ();
+    return [service];
+    };
+<% } -%>
