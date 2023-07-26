@@ -1,7 +1,8 @@
 {
   "name": "@min-module/cli",
-  "version": "1.1.11",
+  "version": "1.1.10",
   "description": "",
+  "private": false,
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -25,5 +26,8 @@
   "engines": {
     "node": "^12.0.0 || >= 14.0.0"
   },
-  "gitHead": "40ff3a6c4471393aca4cebcc6960541ea17f1be8"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "319e3e74c9cc58d5918fe691df0bb90f5544f978"
 }
