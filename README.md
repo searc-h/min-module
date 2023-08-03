@@ -1,5 +1,5 @@
 # @min-module
-> 这是一个提供模块化组织React组件能力的模块集成框架，目前实现了三个部分：
+> 这是一个提供模块化组织React组件能力的模块集成框架，目前实现了四个部分：
 - [core入口函数与模块类型定义等](https://www.npmjs.com/package/@min-module/core)
 - [middleware模块插件](https://www.npmjs.com/package/@min-module/middleware)
 - [utils工具函数](https://www.npmjs.com/package/@min-module/utils)
