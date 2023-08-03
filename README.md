@@ -3,6 +3,7 @@
 - [core入口函数与模块类型定义等](https://www.npmjs.com/package/@min-module/core)
 - [middleware模块插件](https://www.npmjs.com/package/@min-module/middleware)
 - [utils工具函数](https://www.npmjs.com/package/@min-module/utils)
+- [cli命令行工具](https://www.npmjs.com/package/@min-module/cli)
 
 ## 特点
 - 以模块化的风格来使用组件
